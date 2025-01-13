@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevHazirlikMaui.HavaDurumu"
+             Title="Hava Durumu"
+             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource MainBackgroundColor}}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Başlık -->
+            <Label Text="Hava Durumu" 
+                   FontSize="26" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+
+            <!-- Şehir Seçimi -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                   Padding="15"
+                   CornerRadius="15"
+                   HasShadow="True">
+                <VerticalStackLayout>
+                    <Label Text="Şehir Seç"
+                           FontSize="18"
+                           TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                           Margin="0,0,0,10"/>
+                    <Picker x:Name="cityPicker" 
+                            Title="Şehir seçiniz..." 
+                            SelectedIndexChanged="CityPicker_SelectedIndexChanged"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource DarkGray}}"
+                            TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Açıklama -->
+            <Label Text="Hava durumu bilgilerini kaldırmak isterseniz kaldırmak istediğiniz hava durumu bilgisine tıklamanız yeterlidir."
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{AppThemeBinding Light={StaticResource Gray}, Dark={StaticResource White}}"
+                   Margin="0,10,0,0"/>
+
+            <!-- Hava Durumu Görselleri -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="10"
+                   Margin="0,10,0,0">
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="imageStackLayout" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" Spacing="10">
+                    </StackLayout>
+                </ScrollView>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

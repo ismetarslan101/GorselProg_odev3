@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevHazirlikMaui.Kurlar"
+             Title="Kurlar">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource MainBackgroundColor}}">
+
+            <!-- Başlık -->
+            <Label Text="Güncel Döviz Kurları"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{AppThemeBinding Light={StaticResource MainBackgroundColor}, Dark={StaticResource White}}"/>
+
+            <!-- Bilgilendirme -->
+            <Label Text="Kurlar ödev dosyasında belirtilen güncel api lerden anlık olarak çekilip sürekli güncellenmektedir."
+               FontSize="18"
+               FontAttributes="Italic"
+               HorizontalOptions="Center"
+               TextColor="{AppThemeBinding Light={StaticResource MainBackgroundColor}, Dark={StaticResource White}}"/>
+
+            <!-- Döviz Listesi -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+               CornerRadius="15"
+               HasShadow="True"
+               Padding="10">
+                <CollectionView x:Name="dovizliste" >
+                    <CollectionView.Header>
+                        <Grid ColumnDefinitions="2*,*,*,*" RowDefinitions="Auto" Padding="10">
+                            <Label Text="Döviz Adı" Grid.Column="0" FontSize="18" FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource MainBackgroundColor}, Dark={StaticResource White}}" />
+                            <Label Text="Alış" Grid.Column="1" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Gray}, Dark={StaticResource LightGray}}" />
+                            <Label Text="Satış" Grid.Column="2" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Gray}, Dark={StaticResource LightGray}}" />
+                            <Label Text="Fark" Grid.Column="3" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Gray}, Dark={StaticResource LightGray}}" />
+                        </Grid>
+                    </CollectionView.Header>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BorderColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource White}}" 
+                               CornerRadius="10" 
+                               Margin="0,5" 
+                               HasShadow="False" 
+                               Padding="10">
+                                <Grid ColumnDefinitions="2*,*,*,*" RowDefinitions="Auto">
+                                    <Label Grid.Column="0" Text="{Binding Name}" FontSize="12" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                    <Label Grid.Column="1" Text="{Binding Alis}" FontSize="12" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                    <Label Grid.Column="2" Text="{Binding Satis}" FontSize="12" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                    <Label Grid.Column="3" Text="{Binding Degisim}" FontSize="12" HorizontalTextAlignment="End" TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <!-- Güncelle Butonu -->
+            <Button Text="Güncelle"
+                Clicked="Button_Clicked"
+                BackgroundColor="DarkGreen"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="20"
+                HeightRequest="50"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

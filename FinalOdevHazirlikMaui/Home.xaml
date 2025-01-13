@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevHazirlikMaui.Home"
+             BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource MainBackgroundColor}}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <!-- Profil Görseli -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                   CornerRadius="50"
+                   HeightRequest="400"
+                   WidthRequest="400"
+                   HorizontalOptions="Center"
+                   HasShadow="True">
+                <Image Source="ismetarge_jpg.png" Aspect="AspectFill" />
+            </Frame>
+
+            <!-- Başlık -->
+            <Label
+                Text="BARÜ 7. Ar-Ge Proje Pazarı"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}" />
+
+            <!-- Öğrenci Bilgileri -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                   Padding="15"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <VerticalStackLayout Spacing="5">
+                    <Label
+                        Text="22010310013 - İsmet Arslan"
+                        FontSize="18"
+                        TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        Text="Ödev 3 - Final Ek"
+                        FontSize="18"
+                        TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- İletişim Bilgileri -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightGray}, Dark={StaticResource DarkGray}}"
+                   Padding="15"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <Label
+                    Text="İletişim: ismetarslan.uni@gmail.com"
+                    FontSize="18"
+                    TextColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
+                    HorizontalTextAlignment="Center" />
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

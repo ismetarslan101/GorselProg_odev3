@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevHazirlikMaui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Başlık -->
+            <Label Text="Hoş Geldin!"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#4A4A4A" />
+
+            <!-- Açıklama -->
+            <Label Text="Şimdi giriş yaparak veya kayıt olarak uygulamamıza kolayca erişim sağlayın."
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#7D7D7D" />
+
+            <!-- Oturum Açma Formu -->
+            <Frame CornerRadius="15" Padding="20" BackgroundColor="White" HasShadow="True">
+                <VerticalStackLayout Spacing="10" x:Name="loginStack" IsVisible="True">
+                    <Label Text="Oturum Aç"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#4A4A4A"
+                           HorizontalOptions="Center" />
+
+                    <Entry x:Name="txtEmail" Placeholder="Email" Keyboard="Email"
+                           BackgroundColor="#F3F3F3" TextColor="#333" PlaceholderColor="#A8A8A8" />
+
+                    <Entry x:Name="txtPassword" Placeholder="Şifre" IsPassword="True"
+                           BackgroundColor="#F3F3F3" TextColor="#333" PlaceholderColor="#A8A8A8" />
+
+                    <Button Text="Oturum Aç" Clicked="LoginClicked"
+                            BackgroundColor="DarkGreen" TextColor="White" CornerRadius="10"
+                            FontAttributes="Bold" />
+
+                    <Button Text="Hesabım Yok" BackgroundColor="Transparent" TextColor="DarkGreen"
+                            Clicked="EkranGoster" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Kayıt Olma Formu -->
+            <Frame CornerRadius="15" Padding="20" BackgroundColor="White" HasShadow="True">
+                <VerticalStackLayout Spacing="10" x:Name="registerStack" IsVisible="False">
+                    <Label Text="Kayıt Ol"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#4A4A4A"
+                           HorizontalOptions="Center" />
+
+                    <Entry x:Name="txtNickname" Placeholder="Kullanıcı Adı" Keyboard="Default"
+                           BackgroundColor="#F3F3F3" TextColor="#333" PlaceholderColor="#A8A8A8" />
+
+                    <Entry x:Name="txtRegisterEmail" Placeholder="Email" Keyboard="Email"
+                           BackgroundColor="#F3F3F3" TextColor="#333" PlaceholderColor="#A8A8A8" />
+
+                    <Entry x:Name="txtRegisterPassword" Placeholder="Şifre" IsPassword="True"
+                           BackgroundColor="#F3F3F3" TextColor="#333" PlaceholderColor="#A8A8A8" />
+
+                    <Button Text="Kayıt Ol" Clicked="RegisterClicked"
+                            BackgroundColor="DarkGreen" TextColor="White" CornerRadius="10"
+                            FontAttributes="Bold" />
+
+                    <Button Text="Zaten Hesabım Var" BackgroundColor="Transparent" TextColor="DarkGreen"
+                            Clicked="EkranGoster" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
