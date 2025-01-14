@@ -101,7 +101,7 @@
             <!-- Güncelle Butonu -->
             <Button Text="Güncelle"
                 Clicked="Button_Clicked"
-                BackgroundColor="#6C63FF"
+                BackgroundColor="DarkGreen"
                 TextColor="White"
                 FontAttributes="Bold"
                 CornerRadius="20"
